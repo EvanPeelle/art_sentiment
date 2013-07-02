@@ -1,0 +1,87 @@
+<html>
+<head>
+    <script src="artfiles.js"></script>
+    <script src="HandleBars.js"></script>
+    <script src="jquery.js"></script>
+    <script src="underscore.js"></script>
+    <script src="backbone.js"></script>
+    <script src="style.css" type="style"></script>
+  <title>Art Sentimental</title>
+</head>
+<body>
+  <div id="art1"><a href="" + amo + "">art1</a></div>
+  <div id="art2"><a href="" + var + "">art2</div>
+  <div id="art3"><a href="" + var + "">art3</div>
+
+<script>
+
+var i = 21;
+var prefix = imageData.prefix;
+var file = imageData.filename;
+var link = "" + prefix + file[i];
+var link2 = "" + prefix + file[i+1];
+
+
+var item = file[Math.floor(Math.random()*file.length)];
+
+console.log(item)
+
+
+
+
+
+var funnel = function(item) {
+return item + "yes";
+}
+funnel(item);
+console.log(funnel(item))
+/////
+
+
+// $(function() {
+//     $('.view2').click(function() {
+//         $('.sb-player').attr('src', function(i,val) {
+//              return val.replace('a.jpg','b.jpg');
+//         });
+//         return false;
+//     });
+// });
+
+$('art1').attr('src', function(i, val) { return val + "doggy" })
+console.log($('art1').attr('src', function(i, val) { return val + "doggy" }))
+
+////////
+$("#art1").attr("src", link2)
+console.log($("#art1").attr("src", link2))
+
+$('<img src="'+ link +'">').load(function() {
+  $(this).width(400).height(400).appendTo('#art1');
+});
+
+$('<img src="'+ link2 +'">').load(function() {
+  $(this).width(400).height(400).appendTo('#art1');
+});
+
+//increment is not working... randomize! and hide toggle too.
+$("#art1").click(function() {
+  $('<img src="'+ link2 +'">').load(function() {//link2() and  other ways of calculating.
+    $(this).width(400).height(400).appendTo('#art1');
+  });
+});
+
+$("#art2").click(function() {
+  $('<img src="'+ link1 +'">').load(function() {//link2() and  other ways of calculating.
+    $(this).width(400).height(400).appendTo('#art1');
+  });
+});
+
+
+
+//place a new one on the page
+//add a counter to the incrementer
+
+
+</script>
+
+</body>
+</html>

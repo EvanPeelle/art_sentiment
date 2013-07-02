@@ -1,0 +1,14 @@
+1. show two random images //randomize(use params)
+2. make it so that when the user clicks one, two new ones appear //
+3. keep track of the click count of each // increment on the specific image(store elsewhere in object)
+4. (spillover time) work on design and css  //
+5. (tomorrow) set up parse's rest api (using ajax) and make votes permanent
+
+
+LEARNED:
+
+every element has the potential for many attrs' or attributes. Like src, class, id, 
+each attr has a val and an index, to navigate on the dom, and cut, select, and manipulate it's many parts.
+on ready functions can be helpful to activate when dom is loaded.
+use of a string and variables are key in dom selection and val, and attr.
+
