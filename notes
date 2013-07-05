@@ -1,4 +1,4 @@
-1. show two random images //randomize(use params)
+1. show two random images //
 2. make it so that when the user clicks one, two new ones appear //
 3. keep track of the click count of each // increment on the specific image(store elsewhere in object)
 4. (spillover time) work on design and css  //

@@ -7,79 +7,78 @@
     <script src="backbone.js"></script>
     <script src="style.css" type="style"></script>
   <title>Art Sentimental</title>
+  <style>
+    .art img{
+      width: 400px;
+      height: 400px;
+    }
+  </style>
 </head>
 <body>
-  <div id="art1"><a href="" + amo + "">art1</a></div>
-  <div id="art2"><a href="" + var + "">art2</div>
+  <div class="art" id="art1">
+    <img>
+    <button id="firstButton">art1</button>
+  </div>
+  <div class="art" id="art2">
+    <img>
+    <a href="" + var + "">art2
+  </div>
   <div id="art3"><a href="" + var + "">art3</div>
 
 <script>
+//look up event object in jq?
 
-var i = 21;
+
+//JQ is actually creating something that looks like what it is selecting...
+//where it cannot select the
+
 var prefix = imageData.prefix;
 var file = imageData.filename;
-var link = "" + prefix + file[i];
-var link2 = "" + prefix + file[i+1];
 
-
-var item = file[Math.floor(Math.random()*file.length)];
-
-console.log(item)
-
-
-
-
-
-var funnel = function(item) {
-return item + "yes";
+//Output random file path
+var generate = function() {
+  var item = file[Math.floor(Math.random()*file.length)];
+  var link = "" + prefix + item;
+  return link;
 }
-funnel(item);
-console.log(funnel(item))
-/////
 
+//place random image to the dom:
+var loadImage = function(el){
+  $('img', el).attr('src', generate());
+}
+$('.art').each(function(i, el){ loadImage(el) });
+$('.art').click(function() { loadImage($(this)); });
 
-// $(function() {
-//     $('.view2').click(function() {
-//         $('.sb-player').attr('src', function(i,val) {
-//              return val.replace('a.jpg','b.jpg');
-//         });
-//         return false;
-//     });
+// $("#art2").click(function() {
+//   $('<img src="'+ link +'">').load(function() {//link2() and  other ways of calculating.
+//     $(this).width(400).height(400).appendTo('#art');
+//   });
 // });
 
-$('art1').attr('src', function(i, val) { return val + "doggy" })
-console.log($('art1').attr('src', function(i, val) { return val + "doggy" }))
+////on click function that triggers that function.
 
-////////
-$("#art1").attr("src", link2)
-console.log($("#art1").attr("src", link2))
+// $('art1').attr('src', function(i, val) { return val + "doggy" })
+// $("#art1").attr("src", link2)
 
-$('<img src="'+ link +'">').load(function() {
-  $(this).width(400).height(400).appendTo('#art1');
-});
+// //appends the images to dom
+// $('<img src="'+ link +'">').load(function() {
+//   $(this).width(400).height(400).appendTo('#art1');
+// });
+// $('<img src="'+ link2 +'">').load(function() {
+//   $(this).width(400).height(400).appendTo('#art2');
+// });
 
-$('<img src="'+ link2 +'">').load(function() {
-  $(this).width(400).height(400).appendTo('#art1');
-});
-
-//increment is not working... randomize! and hide toggle too.
-$("#art1").click(function() {
-  $('<img src="'+ link2 +'">').load(function() {//link2() and  other ways of calculating.
-    $(this).width(400).height(400).appendTo('#art1');
-  });
-});
-
-$("#art2").click(function() {
-  $('<img src="'+ link1 +'">').load(function() {//link2() and  other ways of calculating.
-    $(this).width(400).height(400).appendTo('#art1');
-  });
-});
-
-
-
-//place a new one on the page
-//add a counter to the incrementer
-
+// //Click and reload new images
+// $("#firstButton").click(function() {
+//   $('<img src="'+ link2 +'">').load(function() {//link2() and  other ways of calculating.
+//     $(this).width(400).height(400).appendTo('#art1');
+//   });
+// });
+// $("#art2").click(function() {
+//   $('<img src="'+ link +'">').load(function() {//link2() and  other ways of calculating.
+//     $(this).width(400).height(400).appendTo('#art');
+//   });
+// });
 
 </script>
 
