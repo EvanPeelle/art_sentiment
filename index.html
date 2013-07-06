@@ -19,7 +19,7 @@ var counter = 0
 //   counter++
 //   hash the functions output...link.
 // }
-var el = '#art1'
+var el = 'body'
 var prefix = imageData.prefix;
 var file = imageData.filename;
 
@@ -29,24 +29,15 @@ var generate = function() {
   var link = "" + prefix + item;
   return link;
 }
-generate();
 
 //place random image to the dom:
 var loader = function(func){
   $('<img src="'+ func +'">').load(function() {
-    $(this).width(400).height(400).appendTo(el);
+    $(this).width(400).height(400).replaceAll('img');
   });
 }
-loader(el,generate());
 
-// $('.art').click(function(){
-//   //hide current selection//or replace
-//   // $('.art').replaceWith( loader(generation()));
-
-//   loader(generate());
-// })
-
-$('body').click(function () {
+$(el).click(function () {
   $(this).replaceWith( loader(generate()) );
 });
 //$(this).text()
