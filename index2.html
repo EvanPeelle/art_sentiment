@@ -1,0 +1,61 @@
+<html>
+<head>
+    <script src="artfiles.js"></script>
+    <!-- // <script src="HandleBars.js"></script> -->
+    <script src="jquery.js"></script>
+    <!-- <script src="underscore.js"></script> -->
+    <!-- <script src="backbone.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Art Sentimental</title>
+</head>
+<body>
+  <div id = "o"> <h1>Welcome to the Gallery</h1>
+  <div id="art1" class="art">
+    <img style="width:400px" src=
+      "file:///Users/Skynet/Desktop/Dropbox/EvanPeelle/CLIENTS/EvanPeelle/Art/Portrait%20Painting/BP1_0687.jpg">
+  </div>
+  <div id="art2" class="art">
+      <img style="width:400px" src="file:///Users/Skynet/Desktop/Dropbox/EvanPeelle/CLIENTS/EvanPeelle/Art/Portrait%20Painting/randy-pastel.jpg">
+  </div>
+</div>
+<script>
+
+var more = function(){};
+var score = {};
+
+var prefix = imageData.prefix;
+var file = imageData.filename;
+
+//makes a random file path
+var generate = function() {
+  var item = file[Math.floor(Math.random()*file.length)];
+  var link = "" + prefix + item;
+  return link;
+}
+
+$('#art2').click(function(){
+  $('#art1').children('img').attr('src', generate());
+
+//make key //increment key value
+  score.key = ""+generate();
+  console.log(score)
+})
+
+$('#art1').click(function(){
+  $('#art2').children('img').attr('src', generate());
+})
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
+
+

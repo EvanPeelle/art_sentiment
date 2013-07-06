@@ -1,11 +1,40 @@
 body {
-  height: 25px;
-  width: 8000px;
-  margin: 25px;
-  font-style: courier;
+  background-color: gray;
+  font-style: verdana;
+  font-size: 22px;
 }
 
-img {
-      width: 300px;
-      height: 400px;
-    }
+#o {
+  text-align: center;
+  font-style: courier;
+  font-size: 22px;
+
+  position: absolute;
+    top:150;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#art1 {
+  width: 400px;
+    height: 300px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 400;
+    margin: auto;
+}
+
+#art2 {
+  width: 400px;
+    height: 300px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 430;
+    right: 0;
+    margin: auto;
+}

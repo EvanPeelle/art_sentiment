@@ -9,17 +9,32 @@
   <title>Art Sentimental</title>
 </head>
 <body>
-  <div id="art1" class="art">art1</button></div>
-  <!-- <div id="art2" class="art">art2</div>
-  <div id="art3" class="art">art3</div> -->
-<img style="width:400px" src="file:///Users/Skynet/Desktop/Dropbox/EvanPeelle/CLIENTS/EvanPeelle/Art/Portrait%20Painting/BP1_0687.jpg">
+  <div>
+  <div id="art1" class="art">
+    <img style="width:400px" src=
+      "file:///Users/Skynet/Desktop/Dropbox/EvanPeelle/CLIENTS/EvanPeelle/Art/Portrait%20Painting/BP1_0687.jpg">
+  </div>
+  <div id="art2" class="art">
+    <img style="width:400px" src=
+      "file:///Users/Skynet/Desktop/Dropbox/EvanPeelle/CLIENTS/EvanPeelle/Art/Portrait%20Painting/BP1_0687.jpg">
+  </div>
+</div>
 <script>
-var counter = 0
-// if(loader()){
-//   counter++
-//   hash the functions output...link.
+
+// make another image to play alongside:
+// var counter = 0;
+// var counted = {
+//   'key': value
+//   takeName: function(){
+//     //if file is clicked then insert into new key.
+//     //return new object.
+//   }
 // }
-var el = 'body'
+
+
+
+var more = function(){};
+
 var prefix = imageData.prefix;
 var file = imageData.filename;
 
@@ -30,19 +45,35 @@ var generate = function() {
   return link;
 }
 
-//place random image to the dom:
+//place random image to the dom
 var loader = function(func){
   $('<img src="'+ func +'">').load(function() {
     $(this).width(400).height(400).replaceAll('img');
+
+
   });
 }
 
-$(el).click(function () {
-  $(this).replaceWith( loader(generate()) );
+// var loader = function(func) {
+//   $('<img src="' + func +'">').load(function() {
+//     $(this).width(400).height(400).replaceAll($('.art').children('img').attr('src', '<source~~~'););//'img'
+//   })
+// }
+
+//click anywhere to upload new images
+// $('#art1').click(function () {
+//   $('#art1').replaceWith( loader(generate()) );
+// });
+
+$('#art2').click(function () {
+  $('#art2').replaceWith( loader(generate()) );
+  $('img').attr('src', loader(generate()));
 });
-//$(this).text()
+
 
 
 </script>
 </body>
 </html>
+
+
