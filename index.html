@@ -7,80 +7,51 @@
     <script src="backbone.js"></script>
     <script src="style.css" type="style"></script>
   <title>Art Sentimental</title>
-  <style>
-    .art img{
-      width: 400px;
-      height: 400px;
-    }
-  </style>
 </head>
 <body>
-  <div class="art" id="art1">
-    <img>
-    <button id="firstButton">art1</button>
-  </div>
-  <div class="art" id="art2">
-    <img>
-    <a href="" + var + "">art2
-  </div>
-  <div id="art3"><a href="" + var + "">art3</div>
-
+  <div id="art1" class="art">art1</button></div>
+  <!-- <div id="art2" class="art">art2</div>
+  <div id="art3" class="art">art3</div> -->
+<img style="width:400px" src="file:///Users/Skynet/Desktop/Dropbox/EvanPeelle/CLIENTS/EvanPeelle/Art/Portrait%20Painting/BP1_0687.jpg">
 <script>
-//look up event object in jq?
-
-
-//JQ is actually creating something that looks like what it is selecting...
-//where it cannot select the
-
+var counter = 0
+// if(loader()){
+//   counter++
+//   hash the functions output...link.
+// }
+var el = '#art1'
 var prefix = imageData.prefix;
 var file = imageData.filename;
 
-//Output random file path
+//makes a random file path
 var generate = function() {
   var item = file[Math.floor(Math.random()*file.length)];
   var link = "" + prefix + item;
   return link;
 }
+generate();
 
 //place random image to the dom:
-var loadImage = function(el){
-  $('img', el).attr('src', generate());
+var loader = function(func){
+  $('<img src="'+ func +'">').load(function() {
+    $(this).width(400).height(400).appendTo(el);
+  });
 }
-$('.art').each(function(i, el){ loadImage(el) });
-$('.art').click(function() { loadImage($(this)); });
+loader(el,generate());
 
-// $("#art2").click(function() {
-//   $('<img src="'+ link +'">').load(function() {//link2() and  other ways of calculating.
-//     $(this).width(400).height(400).appendTo('#art');
-//   });
-// });
+// $('.art').click(function(){
+//   //hide current selection//or replace
+//   // $('.art').replaceWith( loader(generation()));
 
-////on click function that triggers that function.
+//   loader(generate());
+// })
 
-// $('art1').attr('src', function(i, val) { return val + "doggy" })
-// $("#art1").attr("src", link2)
+$('body').click(function () {
+  $(this).replaceWith( loader(generate()) );
+});
+//$(this).text()
 
-// //appends the images to dom
-// $('<img src="'+ link +'">').load(function() {
-//   $(this).width(400).height(400).appendTo('#art1');
-// });
-// $('<img src="'+ link2 +'">').load(function() {
-//   $(this).width(400).height(400).appendTo('#art2');
-// });
-
-// //Click and reload new images
-// $("#firstButton").click(function() {
-//   $('<img src="'+ link2 +'">').load(function() {//link2() and  other ways of calculating.
-//     $(this).width(400).height(400).appendTo('#art1');
-//   });
-// });
-// $("#art2").click(function() {
-//   $('<img src="'+ link +'">').load(function() {//link2() and  other ways of calculating.
-//     $(this).width(400).height(400).appendTo('#art');
-//   });
-// });
 
 </script>
-
 </body>
 </html>

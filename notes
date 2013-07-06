@@ -4,11 +4,30 @@
 4. (spillover time) work on design and css  //
 5. (tomorrow) set up parse's rest api (using ajax) and make votes permanent
 
+QUESTIONS:
+//look up event object in jq?
 
 LEARNED:
 
-every element has the potential for many attrs' or attributes. Like src, class, id, 
+
+//JQ is actually creating something that looks like what it is selecting...
+//where it cannot select the
+
+
+every element has the potential for many attrs' or attributes. Like src, class, id,
 each attr has a val and an index, to navigate on the dom, and cut, select, and manipulate it's many parts.
 on ready functions can be helpful to activate when dom is loaded.
 use of a string and variables are key in dom selection and val, and attr.
 
+//midleware - manipulates requests before sending them off to another layer of midleware,
+//before hitting the endpoints of the server.
+
+//passing functions and passing by reference is incredible for the following reasons:
+  first: evaluate the functions output correctly, then pass that to the other function.
+  second: if that means you pass undefined that happens too, or a function or values.
+  third: if this happens multiple times you can ...
+  //jquery can be made into variables for quick reference into the code as a var.
+  //you can use methods that are part of jquery selectors for the dom.
+  //you can use .classes and iterate through them with methods and then call on those.
+  //remove .load to be  $('img', el).attr('src', generate()); changing the attributes.
+    //that also uses a filter to find all the dom elements that are el, changes their attributes, using my own function called generate. src is the attribute changed.

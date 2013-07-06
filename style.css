@@ -4,3 +4,8 @@ body {
   margin: 25px;
   font-style: courier;
 }
+
+img {
+      width: 300px;
+      height: 400px;
+    }
