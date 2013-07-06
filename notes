@@ -4,10 +4,22 @@
 4. (spillover time) work on design and css  //
 5. (tomorrow) set up parse's rest api (using ajax) and make votes permanent
 
+BUGS:
+if duplicates move to next
+replace files to be nice stuff
+
+
+
 QUESTIONS:
 //look up event object in jq?
 
 LEARNED:
+objects can only redifine by adding itself  + a number.
+
+when things keep bottoming out with getting started on incrementing of storing in a hash, use the '|| default' method. This creates a base to start building.
+
+using hash objects, use bracket notation, as problems happen with dot.
+
 
 
 //JQ is actually creating something that looks like what it is selecting...

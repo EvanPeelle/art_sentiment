@@ -22,6 +22,9 @@
 
 var more = function(){};
 var score = {};
+score.increment = function(){
+
+}
 
 var prefix = imageData.prefix;
 var file = imageData.filename;
@@ -33,20 +36,24 @@ var generate = function() {
   return link;
 }
 
+//Gallery 1 Counter 2 / Click
 $('#art2').click(function(){
-  $('#art1').children('img').attr('src', generate());
-
-//make key //increment key value
-  score.key = ""+generate();
-  console.log(score)
+  var savedFile = generate()
+  $('#art1').children('img').attr('src', savedFile);
+    score[savedFile] = score[savedFile] + 1 || 0;
+    console.log(score);
 })
 
+//Gallery 2 on Counter 1 / Click
 $('#art1').click(function(){
+  var savedFile = generate()
   $('#art2').children('img').attr('src', generate());
+    score[savedFile] = score[savedFile] + 1 || 0;
+    console.log(score);
 })
 
 
-
+//graph out the score inversely
 
 
 
