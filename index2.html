@@ -1,11 +1,12 @@
 <html>
 <head>
     <script src="artfiles.js"></script>
-    <!-- // <script src="HandleBars.js"></script> -->
     <script src="jquery.js"></script>
+    <script src="parse.js"></script>
     <!-- <script src="underscore.js"></script> -->
     <!-- <script src="backbone.js"></script> -->
     <link rel="stylesheet" type="text/css" href="style.css">
+
   <title>Art Sentimental</title>
 </head>
 <body>
@@ -19,11 +20,27 @@
   </div>
 </div>
 <script>
+Parse.initialize("nvemkvVz2t1daYvz7mBZctsMZPafXBn1Swz514vZ", "s3bTCbnhQ7X1SImV2XL9ZBig9gXnaAll0HqyITIK");
+
+var AFT = Parse.Object.extend("artfilestext");
+var artfilestext = new AFT();
+// artfilestext.save({foo: "rab"}, {
+//   success: function(object) {
+//     alert("rabed");
+//   }
+// });
+
+// var TestObject = Parse.Object.extend("TestObject");
+// var testObject = new TestObject();
+// testObject.save({foo: "bar"}, {
+//   success: function(object) {
+//     alert("yay! it worked");
+//   }
+// });
 
 var more = function(){};
 var score = {};
 score.increment = function(){
-
 }
 
 var prefix = imageData.prefix;
@@ -38,6 +55,7 @@ var generate = function() {
 
 //Gallery 1 Counter 2 / Click
 $('#art2').click(function(){
+  //if generate() == $('#art2').children('img').attr('src', generate()); then implement generate() again.
   var savedFile = generate()
   $('#art1').children('img').attr('src', savedFile);
     score[savedFile] = score[savedFile] + 1 || 0;
@@ -48,34 +66,19 @@ $('#art2').click(function(){
 $('#art1').click(function(){
   var savedFile = generate()
   $('#art2').children('img').attr('src', generate());
-    score[savedFile] = score[savedFile] + 1 || 0;
-    console.log(score);
+  score[savedFile] = score[savedFile] + 1 || 0;
+  console.log(score);
+//--x with parse--//
+  artfilestext.save({foo: "score test"}, {
+    success: function(object) {
+      alert("clicked for parse");
+    }
+  });
 })
 
 
-// function init(){
-//   $.ajax({
-//     contentType:"application/json",
-//     dataType:"json",
-//     url:ROOT+"users",
-//     username:appId,
-//     password:masterKey,
-//     processData:false,
-//     headers: {
-//         "X-Parse-Application-Id": "<REMOVED>",
-//         "X-Parse-REST-API-Key": "<REMOVED>"
-//     },
-//     type:"GET",
-//     error:function(e) { alert('error: '+e);}
-//   }).done(function(e,status) {
-//     var user = e.results[0];
-//     var s = user.deviceId;
-//     $("#result").html(s);
-// });
-
-// https://api-content.dropbox.com/1/files/<root>/<path>
-
-
+// 'https://api.parse.com/1/classes/artfilestext/'
+// 'https://api.parse.com /1/classes/<className>/<objectId>'
 
 </script>
 </body>
