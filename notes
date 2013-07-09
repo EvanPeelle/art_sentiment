@@ -3,10 +3,12 @@
 3. keep track of the click count of each // increment on the specific image(store elsewhere in object)
 4. (spillover time) work on design and css  //
 5. (tomorrow) set up parse's rest api (using ajax) and make votes permanent
+  //upload as an object format, not repetitive uploads.
+  //put it all into object format, upload, then work on manipulating with get and post req from app.
+
 
 BUGS:
 if duplicates move to next
-replace files to be nice stuff
 
 
 
@@ -16,6 +18,14 @@ QUESTIONS:
 
 LEARNED:
 
+Each object instantiated is a row, each column heading is a key, and each value is a cell populated in that row.
+edits to the object are done within the object name space, then a function() fires to interact with the database.
+
+//Class.Table.Column.Id.Value
+
+- in object oriented relational data bases like parse. droping means erasing acolumn. Garbage collection happens when a variable can no longer be accessed in the code. (blog post);
+- every object needs to be instantiated to be manipulated or saved somehow. this is the way the object.create function works in the objects. It needs to be made each time a data object is manipulated or added to a table.
+algorithm is a control of information flow - so that it fits the user end result.
 //DB - a table is setup through an object {key:value} but it actually means {column : value, nextcolumn:value}. This is helpful in keeping a clear schema.
 //Doc.ready is very important and should be done.
 
@@ -25,11 +35,8 @@ when things keep bottoming out with getting started on incrementing of storing i
 
 using hash objects, use bracket notation, as problems happen with dot.
 
-
-
 //JQ is actually creating something that looks like what it is selecting...
 //where it cannot select the
-
 
 every element has the potential for many attrs' or attributes. Like src, class, id,
 each attr has a val and an index, to navigate on the dom, and cut, select, and manipulate it's many parts.
