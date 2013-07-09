@@ -20,29 +20,17 @@
   </div>
 </div>
 <script>
+$( document ).ready(function() {
+    console.log( "ready!" );
+
+
 Parse.initialize("nvemkvVz2t1daYvz7mBZctsMZPafXBn1Swz514vZ", "s3bTCbnhQ7X1SImV2XL9ZBig9gXnaAll0HqyITIK");
+
 
 var AFT = Parse.Object.extend("artfilestext");
 var artfilestext = new AFT();
-// artfilestext.save({foo: "rab"}, {
-//   success: function(object) {
-//     alert("rabed");
-//   }
-// });
-
-// var TestObject = Parse.Object.extend("TestObject");
-// var testObject = new TestObject();
-// testObject.save({foo: "bar"}, {
-//   success: function(object) {
-//     alert("yay! it worked");
-//   }
-// });
-
-var more = function(){};
+//
 var score = {};
-score.increment = function(){
-}
-
 var prefix = imageData.prefix;
 var file = imageData.filename;
 
@@ -52,6 +40,16 @@ var generate = function() {
   var link = "" + prefix + item;
   return link;
 }
+// one time upload of files
+// for(var i = 0; i < file.length; i++) {
+  var joined = imageData.prefix + imageData.filename[0]+"";
+  console.log(joined);
+  artfilestext.save({ URLs : joined , SCORE : 0}, {
+    success: function(object) {
+      alert( "url");
+    }
+  });
+// }
 
 //Gallery 1 Counter 2 / Click
 $('#art2').click(function(){
@@ -76,7 +74,7 @@ $('#art1').click(function(){
   });
 })
 
-
+});
 // 'https://api.parse.com/1/classes/artfilestext/'
 // 'https://api.parse.com /1/classes/<className>/<objectId>'
 

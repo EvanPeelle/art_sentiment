@@ -11,9 +11,14 @@ replace files to be nice stuff
 
 
 QUESTIONS:
-//look up event object in jq?
+//how to use http and ajax through console.
+//how does curl compare to all these other protocol methods... how many are there? whath's the spectrum.
 
 LEARNED:
+
+//DB - a table is setup through an object {key:value} but it actually means {column : value, nextcolumn:value}. This is helpful in keeping a clear schema.
+//Doc.ready is very important and should be done.
+
 objects can only redifine by adding itself  + a number.
 
 when things keep bottoming out with getting started on incrementing of storing in a hash, use the '|| default' method. This creates a base to start building.
